@@ -21,6 +21,7 @@ function RetrieveComponents()
 	MDT = exports["mythic-base"]:FetchComponent("MDT")
 	Laptop = exports["mythic-base"]:FetchComponent("Laptop")
 	StorageUnits = exports["mythic-base"]:FetchComponent("StorageUnits")
+	Version = exports["mythic-base"]:FetchComponent("Version")
 end
 
 AddEventHandler("Core:Shared:Ready", function()
@@ -44,6 +45,7 @@ AddEventHandler("Core:Shared:Ready", function()
 		"MDT",
 		"StorageUnits",
 		"Laptop",
+		"Version",
 	}, function(error)
 		if #error > 0 then 
             exports["mythic-base"]:FetchComponent("Logger"):Critical("Businesses", "Failed To Load All Dependencies")
@@ -58,6 +60,8 @@ AddEventHandler("Core:Shared:Ready", function()
 		end, 2)
 
 		Startup()
+
+		Version:Check('Mythic-Framework/Mythic-VersionCheckers', GetCurrentResourceName())
 	end)
 end)
 

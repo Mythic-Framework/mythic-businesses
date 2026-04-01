@@ -1,14 +1,9 @@
 fx_version 'cerulean'
 games {'gta5'}
 lua54 'yes'
-client_script "@mythic-base/components/cl_error.lua"
-client_script "@mythic-pwnzor/client/check.lua"
 
-description 'AuthenticRP Businesses - Random Stuff For Random Businesses'
-name 'AuthenticRP: mythic-businesses'
-author 'Dr Nick'
-version 'v1.0.0'
-url 'https://www.mythicrp.com'
+version '1.0.0'
+repository 'https://github.com/Mythic-Framework/mythic-businesses'
 
 server_scripts {
     'config/sv_config.lua',
@@ -17,6 +12,8 @@ server_scripts {
     'server/**/*.lua',
 }
 
+client_script "@mythic-base/components/cl_error.lua"
+client_script "@mythic-pwnzor/client/check.lua"
 client_scripts {
     'shared/**/*.lua',
     'client/**/*.lua',
